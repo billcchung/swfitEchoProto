@@ -1,6 +1,0 @@
-use_frameworks!
-target 'echo_Tests' do
-  pod 'echo', :path => '../'
-  
-  
-end
