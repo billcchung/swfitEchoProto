@@ -57,13 +57,13 @@ internal extension Echo_EchoService {
 
 public final class Echo_EchoServiceClient: ServiceClientBase, Echo_EchoService {
   /// Synchronous. Unary.
-  internal func echo(_ request: Echo_EchoRequest, metadata customMetadata: Metadata) throws -> Echo_EchoResponse {
+  public func echo(_ request: Echo_EchoRequest, metadata customMetadata: Metadata) throws -> Echo_EchoResponse {
     return try Echo_EchoEchoCallBase(channel)
       .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
   @discardableResult
-  internal func echo(_ request: Echo_EchoRequest, metadata customMetadata: Metadata, completion: @escaping (Echo_EchoResponse?, CallResult) -> Void) throws -> Echo_EchoEchoCall {
+  public func echo(_ request: Echo_EchoRequest, metadata customMetadata: Metadata, completion: @escaping (Echo_EchoResponse?, CallResult) -> Void) throws -> Echo_EchoEchoCall {
     return try Echo_EchoEchoCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }
