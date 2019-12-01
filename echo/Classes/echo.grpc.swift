@@ -25,7 +25,7 @@ import Foundation
 import SwiftGRPC
 import SwiftProtobuf
 
-internal protocol Echo_EchoEchoCall: ClientCallUnary {}
+public protocol Echo_EchoEchoCall: ClientCallUnary {}
 
 fileprivate final class Echo_EchoEchoCallBase: ClientCallUnaryBase<Echo_EchoRequest, Echo_EchoResponse>, Echo_EchoEchoCall {
   override class var method: String { return "/echo.Echo/Echo" }
@@ -33,7 +33,7 @@ fileprivate final class Echo_EchoEchoCallBase: ClientCallUnaryBase<Echo_EchoRequ
 
 
 /// Instantiate Echo_EchoServiceClient, then call methods of this protocol to make API calls.
-internal protocol Echo_EchoService: ServiceClient {
+public protocol Echo_EchoService: ServiceClient {
   /// Synchronous. Unary.
   func echo(_ request: Echo_EchoRequest, metadata customMetadata: Metadata) throws -> Echo_EchoResponse
   /// Asynchronous. Unary.
@@ -55,7 +55,7 @@ internal extension Echo_EchoService {
 
 }
 
-internal final class Echo_EchoServiceClient: ServiceClientBase, Echo_EchoService {
+public final class Echo_EchoServiceClient: ServiceClientBase, Echo_EchoService {
   /// Synchronous. Unary.
   internal func echo(_ request: Echo_EchoRequest, metadata customMetadata: Metadata) throws -> Echo_EchoResponse {
     return try Echo_EchoEchoCallBase(channel)
